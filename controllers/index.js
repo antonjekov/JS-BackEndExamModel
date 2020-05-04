@@ -1,5 +1,9 @@
-const notFoundHandler = require('./notFound');
+const user = require('./user');
+const home = require('./home');
+const errors = require('./errors')
 
 module.exports={
-    notFoundHandler
+    errors,
+    user,
+    home
 }
