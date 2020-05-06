@@ -14,7 +14,8 @@ const userSchema = new mongoose.Schema({
         },
         unique: true
     },
-    password: String
+    password: String,
+    coursesEnrolled:[{type: mongoose.Types.ObjectId, ref:'Courses'}]
 
 /**With passport-local-mongoose the validation of password is optional parameter is not possible we to use mongoose Scheme validation */
     // password: {
@@ -32,9 +33,9 @@ const userSchema = new mongoose.Schema({
 
 /**This is the wright way to validate password in passport-local-mongoose */
 const passwordValidator = function (password, error) {
-    if (password.length < 8) {
+    if (password.length < 5) {
         return error({
-            message: 'Password length must be minimum 8 characters!'
+            message: 'Password length must be minimum 5 characters!'
         })
     } else if (!/^[a-zA-Z0-9]+$/.test(password)) {
         return error({

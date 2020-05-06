@@ -29,7 +29,7 @@ module.exports = {
                             return next(err);
                         }
 
-                        return res.render('home.hbs', {user: {username: user.username}});
+                        return res.redirect('/');
                     });
                 })(req, res, next);
         },
@@ -69,11 +69,7 @@ module.exports = {
                             return next(err);
                         }
 
-                        return res.render('home.hbs', {
-                            user: {
-                                username: user.username
-                            }
-                        });
+                        return res.redirect('/');
                     });
                 })(req, res, next);
             });

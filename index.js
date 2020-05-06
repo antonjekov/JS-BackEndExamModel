@@ -15,3 +15,4 @@ dbConnector().then(() => {
     /**App(our server) start to listen for connections from clients*/
     app.listen(config.port, console.log(`Server listening on port ${config.port}`))
 })
+

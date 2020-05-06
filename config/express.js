@@ -51,7 +51,8 @@ module.exports = (app) => {
 
     /** Setup the static files */
     app.use(express.static(path.resolve(__basedir, 'public')));
-
+    
+   
     /** compression compress our responce in gzip and reduce the size of responce */
     app.use(compression());
 
